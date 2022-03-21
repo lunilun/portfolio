@@ -64,9 +64,9 @@ export default {
   methods:{
     git(e){
       var i = parseInt(e.currentTarget.id);
-      if(i==0) window.open('https://www.naver.com')
-      else if(i==1) window.open('https://www.daum.net');
-      else window.open('https://www.google.co.kr');
+      if(i==0) window.open('https://github.com/lunilun/idaum')
+      else if(i==1) window.open('https://github.com/lunilun/sweet');
+      else window.open('https://github.com/lunilun/portfolio');
     }
   }
 };
