@@ -1,0 +1,60 @@
+@mixin ab($top){
+    position: absolute;
+    top:$top;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.banner{
+    height: calc(100vh);
+    position: relative;
+    .title{
+        @include ab(30%);
+        @include font-set(50px,$title_txt);
+        letter-spacing: 5px;
+        &:hover{cursor: default;}
+    }
+    .back{
+        @include size-set(650px,130px);
+        border: 10px solid rgba($color: blue, $alpha: .3);
+        @include ab(50%);
+        display: flex;
+        align-items: center;
+        #vue-typer{
+            @include font-set(50px,$inner_txt); //스타일이 안먹음
+            margin-left: 15px;
+            flex: 3;
+            line-height: 50px;
+        }
+        .clickMotion{
+            flex: 1;
+            @include size-set(100%,100%);
+            position: relative;
+            border-left: 3px solid rgba($color: blue, $alpha: .3);
+            img{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+    }
+    .down{
+        position: absolute;
+        bottom:0;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        @include size-set(60px,100px);
+        border: 5px solid black;
+        border-radius: 30px;
+        bottom: 5%;
+        overflow: hidden;
+        .arrow{
+            @include ab(1%);
+            @include font-set(50px,$inner_txt); 
+            color: black;
+            animation: drop 1.5s linear infinite;
+        }
+        &:hover{cursor: pointer;}
+        :nth-child(2){animation-delay: .4s;}
+    }
+}

@@ -1,0 +1,93 @@
+.skill{
+    @include size-set(100%,auto);
+    position: relative;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: .3);
+    margin-top: 10px;
+    #top{@include size-cate-title();}
+    .skillList{
+        @include size-set(100%,600px);
+        display: flex;
+        flex-direction: column;
+        .icon{
+            @include size-set(100%,200px);
+            display: flex;
+            justify-content: space-between;
+            .skills{
+                @include size-set(calc(100% / 9),100%);
+                padding: 5px;
+                box-shadow: 1px 1px 5px rgba($color: #000000, $alpha: .5);
+                border-radius: 20px;
+                &:hover img{transform: scale(1.1); transition: all .4s; cursor: pointer;}
+                input{display: none}
+                img{transform: scale(.8)}
+            }
+        }
+        .infoskill{
+            @include size-set(100%,100%);
+            margin-top: 30px;
+            .card{
+                position: relative;
+                float: left;
+                @include size-set(30%,100%);
+                .wrap{
+                    @include size-set(100%,90%);
+                    background: rgb(245, 222, 121);
+                    border-radius: 20px;
+                    .back{
+                        @include size-set(95%,95%);
+                        position: relative;
+                        background: rgba($color: #ffffff, $alpha: 1);
+                        border-radius: 20px;
+                        text-align: center;
+                        opacity: 1;
+                        margin: 0 auto;
+                        .noClick{
+                            @include font-set(35px,$inner_txt);
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translateX(-50%) translateY(-50%);
+                            #blinkTxt{animation: blink 1s linear infinite;}
+                        }
+                        .yesClick{
+                            @include size-set(100%,100%);
+                            background: white;
+                            border-radius: 20px;
+                            opacity: 0;
+                            display: flex;
+                            flex-direction: column;
+                            padding: 10px;
+                            // @include font-set(25px,$inner_txt);
+                            font-family: 'Dongle', sans-serif;;
+                            div{
+                                @include size-set(100%,100%); 
+                                border: 1px solid rgba($color: #000000, $alpha: .2);
+                                opacity: 0; 
+                                border-radius: 20px;
+                                margin-bottom: 5px;
+                            }
+                            .target{flex:1; line-height: 50px; font-size: 35px;}
+                            .using{flex:5; text-align: left; font-size: 30px;}
+                        }
+                        .mark{
+                            position: absolute;
+                            @include size-set(100px,50px);
+                            background: white;
+                            border-radius: 10px;
+                            opacity: .8;
+                            top: 0;
+                            right: 2%;
+                            transform: rotate(30deg);
+                        }
+                    }
+                }
+                
+            }
+            .chart{
+                float: right;
+                @include size-set(70%,100%);
+                #draw_chart{@include size-set(100%,100%);}
+            }
+        }
+    }
+}

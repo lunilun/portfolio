@@ -1,0 +1,20 @@
+.pchome{
+    @include size-set(100%,auto);
+    position: relative;
+    min-width: 1500px;
+    .wrap{
+        @include size-set(100%,auto);
+        .body{
+            @include size-set(1100px,auto);
+            margin: 0 auto;
+        }
+        .footer{
+            @include size-set(100%,80px);
+            @include font-set(20px,$side_txt);
+            margin-top: 10px;
+            border-top: 1px solid black;
+            text-align: center;
+            line-height: 30px;
+        }
+    }
+}

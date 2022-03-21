@@ -1,0 +1,46 @@
+.connect{
+    @include size-set(100%,auto);
+    border-top: 1px solid rgba($color: #000000, $alpha: .3);
+    margin-top: 30px;
+    #top{@include size-cate-title();}
+    .items{
+        @include size-set(80%,200px);
+        @include font-set(25px,$inner_txt);
+        display: flex;
+        text-indent: 20px;
+        margin: 0 auto;
+        .one{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            text-indent: 20px;
+            div:hover{cursor: pointer; animation: blink 1s infinite linear;}
+        }
+        .two{
+            width: 100%;
+            position: relative;
+            .back{
+                height: 100%;
+                border: 1px solid rgba($color: #000000, $alpha: .2);
+                background: url("~@/Image/conback.png") center no-repeat;
+                background-size: cover;
+                opacity: .5;
+            }
+            span{
+                position: absolute;
+                @include font-set(50px,$title_txt);
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                text-align: center;
+                transform: translateX(-50%) translateY(-50%) rotate(5deg);
+                letter-spacing: 15px;
+                background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: grad 3s infinite linear;
+            }
+        }
+    }
+}

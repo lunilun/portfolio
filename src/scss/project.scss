@@ -1,0 +1,88 @@
+.project{
+    @include size-set(auto,auto);
+    min-height: 900px;
+    margin-top: 10px;
+    #top{@include size-cate-title();}
+    .item{
+        @include size-set(100%,250px);
+        position: relative;
+        margin-bottom: 25px;
+        display: flex;
+        .backTxt{
+            position: absolute;
+            @include size-set(70%,auto);
+            @include font-set(150px,$inner_txt);
+            color: rgba($color: #787878, $alpha: .15);
+        }
+        .git{
+            @include size-set(250px,250px);
+            position: absolute;
+            z-index: 5;
+            border-radius: 30px;
+            overflow: hidden;
+            img{
+                @include size-set(50px,50px);
+                transform: translateX(-100%);
+                margin-top: 5px;
+                &:hover{cursor: pointer; filter: invert(70%);}
+            }
+            &:hover{
+                transition: all .8s;
+                img{
+                    transition: all .8s;
+                    transform: translateX(10px);
+                }
+            }
+        }
+        .imgs{
+            position: relative;
+            cursor: default;
+            display: flex;
+            align-items: center;
+            #bg{
+                border: 1px solid rgba($color: #000000, $alpha: .3);
+                border-radius: 30px; opacity: 1;
+                :hover{
+                    color: red;
+                }
+            }
+            
+            .inner{
+                .detail{
+                    margin-left:40px;
+                    .title{@include font-set(50px,$inner_txt);}
+                    .cont{
+                        @include font-set(30px,$inner_txt);
+                        line-height: 30px;
+                    }
+                }
+                .uses{
+                    margin-top: 10px;
+                    width: auto;
+                    display: inline-block;
+                    text-align: center;
+                    margin-left: 10px;
+                    line-height: 30px;
+                    padding: 3px;
+                    background: gray;
+                    border: 1px solid black;
+                    border-radius: 10px;
+                    color: white;
+                    @include font-set(30px,$inner_txt);
+                    cursor: default;
+                    &:hover{cursor: pointer; background: black;}
+                }
+            }
+        }
+        &:nth-child(2n){
+            justify-content: flex-start;
+            .inner{margin-left: 20px;}
+            .backTxt{text-align: right;}
+        }
+        &:nth-child(2n-1){
+            justify-content: flex-end;
+            .inner{margin-right: 20px;}
+            .backTxt{text-align: left;}
+        }
+    }
+}
